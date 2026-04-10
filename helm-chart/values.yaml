@@ -1,0 +1,18 @@
+replicaCount: 2
+
+image:
+  repository: myapp
+  tag: latest
+  pullPolicy: Never
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30007
+
+ingress:
+  enabled: true
+  host: myapp.local
+
+config:
+  ENV: production
